@@ -11,6 +11,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
+        <h1>Tutte le stanze</h1>
         <table class='table'>
           <thead>
             <tr>
