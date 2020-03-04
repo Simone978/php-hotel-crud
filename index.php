@@ -14,8 +14,6 @@
       <tr>
         <th>id</th>
         <th>Numero stanza</th>
-        <th>Piano</th>
-        <th>letti</th>
       </tr>
     </thead>
     <tbody>
@@ -25,9 +23,7 @@
         <tr>
           <td><?php echo $room['id'] ?></td>
           <td><?php echo $room['room_number'] ?></td>
-          <td><?php echo $room['floor'] ?></td>
-          <td><?php echo $room['beds'] ?></td>
-          <td><a href="">Visualizza</a></td>
+          <td><a href="http://localhost:88/php/php-hotel-crud/show/show.php/?id=<?php echo $room['id'] ?>">Visualizza</a></td>
         </tr>
       <?php } ?>
 
