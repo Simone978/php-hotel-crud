@@ -10,6 +10,7 @@
 <body>
   <?php
   include __DIR__.'/server.php';
+  if(!empty($rooms)){
   foreach ($rooms as $room) { ?>
     <ul>
       <li>ID: <?php echo $room['id'] ?></li>
@@ -17,7 +18,8 @@
       <li>Piano n. <?php echo $room['floor'] ?></li>
       <li>Numero letti: <?php echo $room['beds'] ?></li>
     </ul>
-  <?php } ?>
+  <?php }
+} ?>
 
 
 

@@ -8,27 +8,36 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <table class='table'>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>Numero stanza</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            include __DIR__.'/database.php';
+            if(!empty($rooms)){
+            foreach ($rooms as $room) {?>
+              <tr>
+                <td><?php echo $room['id'] ?></td>
+                <td><?php echo $room['room_number'] ?></td>
+                <td><a href="http://localhost:88/php/php-hotel-crud/show/show.php/?id=<?php echo $room['id'] ?>">Visualizza</a></td>
+              </tr>
+            <?php }
+          } ?>
 
-  <table>
-    <thead>
-      <tr>
-        <th>id</th>
-        <th>Numero stanza</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-      include __DIR__.'/database.php';
-      foreach ($rooms as $room) {?>
-        <tr>
-          <td><?php echo $room['id'] ?></td>
-          <td><?php echo $room['room_number'] ?></td>
-          <td><a href="http://localhost:88/php/php-hotel-crud/show/show.php/?id=<?php echo $room['id'] ?>">Visualizza</a></td>
-        </tr>
-      <?php } ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
-    </tbody>
-  </table>
+
 
 </body>
 </html>
