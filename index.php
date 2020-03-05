@@ -22,12 +22,20 @@
           <tbody>
             <?php
             include __DIR__.'/database.php';
+            include __DIR__.'/server.php';
             if(!empty($rooms)){
             foreach ($rooms as $room) {?>
               <tr>
                 <td><?php echo $room['id'] ?></td>
                 <td><?php echo $room['room_number'] ?></td>
                 <td><a href="http://localhost:88/php/php-hotel-crud/show/show.php/?id=<?php echo $room['id'] ?>">Visualizza</a></td>
+                <td><a href="">Modifica</a></td>
+                <td>
+                  <form action="http://localhost:88/php/php-hotel-crud/delete/server.php" method="post">
+                    <input type="hidden" name="id" value = <?php echo $room['id'] ?>>
+                    <input class="btn btn-danger" type="submit" value= "Cancella">
+                  </form>
+                </td>
               </tr>
             <?php }
           } ?>
