@@ -1,7 +1,8 @@
 
   <?php
-  include __DIR__.'/../partials/header.php';
+
   include __DIR__.'/server.php';
+  include __DIR__."/../partials/header.php";
   if(!empty($rooms)){
   foreach ($rooms as $room) { ?>
     <ul>
@@ -16,5 +17,5 @@
 
 
 <?php
-  include __DIR__.'/../partials/footer.php';
+  include __DIR__."/../partials/footer.php";
  ?>
