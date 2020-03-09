@@ -1,5 +1,6 @@
   <?php
   include __DIR__."/partials/header.php";
+  include __DIR__."/env.php";
    ?>
 
     <div class="container">
@@ -23,7 +24,7 @@
                   <td><?php echo $room['id'] ?></td>
                   <td><?php echo $room['room_number'] ?></td>
                   <td><a href="http://localhost:88/php/php-hotel-crud/show/show.php/?id=<?php echo $room['id'] ?>">Visualizza</a></td>
-                  <td><a href="">Modifica</a></td>
+                  <td><a href="http://localhost:88/php/php-hotel-crud/update/form.php/?id=<?php echo $room['id'] ?>">Modifica</a></td>
                   <td>
                     <form action="http://localhost:88/php/php-hotel-crud/delete/server.php" method="post">
                       <input type="hidden" name="id" value = <?php echo $room['id'] ?>>
@@ -42,5 +43,5 @@
 
 
   <?php
-  include __DIR__.'/partials/footer.php'; 
+  include __DIR__.'/partials/footer.php';
    ?>
