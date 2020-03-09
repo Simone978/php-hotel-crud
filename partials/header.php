@@ -17,6 +17,7 @@ include __DIR__.'/../env.php';
       <div class="navbar-brand">Hotel Bool</div>
       <ul class="navbar-nav">
         <li><a href="<?php echo $basepath ?>">Tutte le stanze</a></li>
+        <li><a href="<?php echo $basepath ?>/insert/insert.php">Crea stanza</a></li>
       </ul>
     </nav>
   </header>
