@@ -23,8 +23,9 @@
   $sql = "UPDATE stanze SET room_number = $room_number, floor = $floor, beds = $beds WHERE id = $id";
   $result = $conn->query($sql);
 
-  if($result){
-    echo "modifica riuscita";
-  }else{
-    echo "non riuscita";
-  }
+  header("Location: http://localhost:88/php/php-hotel-crud/show/show.php/?id=$id");
+  // if($result){
+  //   echo "modifica riuscita";
+  // }else{
+  //   echo "non riuscita";
+  // }
