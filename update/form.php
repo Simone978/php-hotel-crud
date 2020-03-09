@@ -3,7 +3,7 @@
   include_once __DIR__.'\..\env.php';
   include __DIR__.'\..\database.php';
 
-    $id = $_GET['id'];
+  $id = $_GET['id'];
 
   $sql = "SELECT * FROM stanze WHERE id = $id ";
   $result = $conn->query($sql);
@@ -16,18 +16,21 @@
 
  <div class="container">
    <div class="col-12">
-     <form>
+     <form action= "<?php echo $basepath ?>/update/server.php" method="post">
        <div class="form-group">
          <label for="room_number">Numero Stanza</label>
-         <input type="text" class="form-control" value="<?php echo $row['room_number'] ?>">
+         <input type="text" class="form-control" name="room_number" value="<?php echo $row['room_number'] ?>">
        </div>
        <div class="form-group">
          <label for="floor">piano</label>
-         <input type="text" class="form-control" value="<?php echo $row['floor'] ?>">
+         <input type="text" class="form-control" name='floor' value="<?php echo $row['floor'] ?>">
        </div>
        <div class="form-group">
          <label for="beds">letti</label>
-         <input type="text" class="form-control" value="<?php echo $row['beds'] ?>">
+         <input type="text" class="form-control" name='beds' value="<?php echo $row['beds'] ?>">
+       </div>
+       <div class="form-group">
+         <input type="hidden" class="form-control" name='id' value="<?php echo $row['id'] ?>">
        </div>
        <button type="submit" class="btn btn-primary">Salva</button>
      </form>
