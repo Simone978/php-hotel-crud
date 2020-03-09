@@ -20,8 +20,11 @@
   $floor = $_POST['floor'];
   $beds = $_POST['beds'];
 
-  $sql = "UPDATE stanze SET room_number = $room_number, floor = $floor, beds = $beds WHERE id = $id";
-  $result = $conn->query($sql);
+  // $sql = "UPDATE stanze SET room_number = $room_number, floor = $floor, beds = $beds WHERE id = $id";
+  // $result = $conn->query($sql);
+  $stmt = $conn->prepare("UPDATE stanze SET room_number = ?, floor = ?, beds = ? WHERE id = $id");
+  $stmt->bind_param("iii", $room_number, $floor, $beds);
+  $stmt->execute();
 
   header("Location: http://localhost:88/php/php-hotel-crud/show/show.php/?id=$id");
   // if($result){
