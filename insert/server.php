@@ -16,8 +16,13 @@
   $floor = $_POST['floor'];
   $beds = $_POST['beds'];
 
-  $sql = "INSERT INTO stanze (room_number, floor, beds, created_at, updated_at) VALUES ($room_number, $floor, $beds, NOW(), NOW())";
-  $result = $conn->query($sql);
+  // $sql = "INSERT INTO stanze (room_number, floor, beds, created_at, updated_at) VALUES ($room_number, $floor, $beds, NOW(), NOW())";
+  // $result = $conn->query($sql);
+
+  $stmt = $conn->prepare("INSERT INTO stanze (room_number, floor, beds, created_at, updated_at) VALUES (?, ?, ?, NOW(), NOW())");
+  $stmt->bind_param("iii", $room_number, $floor, $beds);
+  $stmt->execute();
+
 
   header("Location: $basepath");
   if($result){
